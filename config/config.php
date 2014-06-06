@@ -17,7 +17,7 @@ use Norm\Schema\Password;
 
 return array(
     'app.about' => array(
-        'title' => 'Bono Application',
+        'title' => 'Xinix-Showcase',
     ),
     'bono.salt' => 'please change this',
     'bono.providers' => array(
@@ -25,7 +25,7 @@ return array(
             'datasources' => array(
                 'mongo' => array(
                     'driver' => '\\Norm\\Connection\\MongoConnection',
-                    'database' => 'bono',
+                    'database' => 'showcase',
                 ),
             ),
             'collections' => array(
@@ -37,6 +37,11 @@ return array(
                             'email' => String::create('email')->filter('trim|required|unique:User,email'),
                             'first_name' => String::create('first_name')->filter('trim|required'),
                             'last_name' => String::create('last_name')->filter('trim|required'),
+                        ),
+                    ),
+                    'Git' => array(
+                        'schema' => array(
+                            'git' => String::create('git'),
                         ),
                     ),
                 ),
@@ -52,6 +57,8 @@ return array(
             'default' => '\\Norm\\Controller\\NormController',
             'mapping' => array(
                 '/user' => null,
+                '/git' => null,
+                '/' => '\\App\\Controller\\PostController',
             ),
         ),
         '\\Bono\\Middleware\\ContentNegotiatorMiddleware' => array(
@@ -69,4 +76,8 @@ return array(
         '\\Bono\\Middleware\\NotificationMiddleware' => null,
         '\\Bono\\Middleware\\SessionMiddleware' => null,
     ),
+    'bono.theme' => array(
+        'class' => '\\Xinix\\Theme\\NakedTheme',
+        'override' => true,
+    )
 );

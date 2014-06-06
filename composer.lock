@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "437755aaab2338e428a01bfd373dd386",
+    "hash": "975f8096237b1f533b864b92f7bdfc55",
     "packages": [
         {
             "name": "filp/whoops",
@@ -473,6 +473,39 @@
             "time": "2014-05-20 20:12:45"
         },
         {
+            "name": "xinix-technology/naked-theme",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xinix-technology/naked-theme.git",
+                "reference": "0ae7dac78472096b9b6df9eb2aa8a5f6c25e0194"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xinix-technology/naked-theme/zipball/0ae7dac78472096b9b6df9eb2aa8a5f6c25e0194",
+                "reference": "0ae7dac78472096b9b6df9eb2aa8a5f6c25e0194",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Xinix\\Theme\\NakedTheme": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Ali",
+                    "email": "muhammadali.alaydrus@gmail.com"
+                }
+            ],
+            "description": "Naked theme",
+            "time": "2014-05-31 09:18:44"
+        },
+        {
             "name": "xinix-technology/norm",
             "version": "dev-master",
             "source": {
@@ -533,7 +566,8 @@
         "xinix-technology/bono": 20,
         "xinix-technology/norm": 20,
         "xinix-technology/migrate": 20,
-        "reekoheek/bono-auth": 20
+        "reekoheek/bono-auth": 20,
+        "xinix-technology/naked-theme": 20
     },
     "platform": [],
     "platform-dev": []
