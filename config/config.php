@@ -58,7 +58,7 @@ return array(
             'mapping' => array(
                 '/user' => null,
                 '/git' => null,
-                '/' => '\\App\\Controller\\PostController',
+                '/menu' => '\\App\\Controller\\MenuController',
             ),
         ),
         '\\Bono\\Middleware\\ContentNegotiatorMiddleware' => array(
