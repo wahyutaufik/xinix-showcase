@@ -17,19 +17,35 @@
         </div>
         <div class="list-user">
             <div class="wrapper">
-                <ul class="listview">
-                    <li class="list-group-container">
-                        <ul class="list-group">
+                <div class="table-container">
+                    <table class="table nowrap stripped hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Stars</th>
+                                <th>Forks</th>
+                                <th>Author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <?php foreach ($entries as $entry): ?>
-                            <li class="plain">
-                                <a href="http://localhost/xinix-showcase/www/index.php/git/<?php echo $entry['$id'] ?>">
-                                    <?php echo $entry['git']; ?> 
-                                </a>
-                            </li>
+                            <?php 
+                                $gits = explode("com/",$entry['git']);
+                                $git = explode("/",$gits['1']);
+                            ?>
+                            <tr>
+                                <td><a href="<?php echo $entry['git']; ?>"><?php echo $git['1'] ?></a></td>
+                                <td>Dependency Injection Container for Bono PHP Framework</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><a href="https://github.com/<?php echo $git['0']; ?>"><?php echo $git['0'] ?></a></td>
+                            </tr>
                             <?php endforeach ?>
-                        </ul>
-                    </li>
-                </ul>
+                        </tbody>
+                    </table>
+                    
+                </div>
             </div>
         </div>
     </div>
