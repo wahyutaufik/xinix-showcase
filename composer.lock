@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "975f8096237b1f533b864b92f7bdfc55",
+    "hash": "bd481868dbfb0873f19e5d9ea315cb98",
     "packages": [
         {
             "name": "filp/whoops",
@@ -161,12 +161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reekoheek/bono-auth.git",
-                "reference": "0ddef9102e9f8c787b610388ba896a1457e53a9d"
+                "reference": "4f93df03905892378a881572fe79affab4b03faf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reekoheek/bono-auth/zipball/0ddef9102e9f8c787b610388ba896a1457e53a9d",
-                "reference": "0ddef9102e9f8c787b610388ba896a1457e53a9d",
+                "url": "https://api.github.com/repos/reekoheek/bono-auth/zipball/4f93df03905892378a881572fe79affab4b03faf",
+                "reference": "4f93df03905892378a881572fe79affab4b03faf",
                 "shasum": ""
             },
             "require": {
@@ -192,7 +192,7 @@
                 }
             ],
             "description": "Bono Auth",
-            "time": "2014-06-03 09:26:23"
+            "time": "2014-06-09 07:07:38"
         },
         {
             "name": "reekoheek/jsonkit",
@@ -380,12 +380,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xinix-technology/bono.git",
-                "reference": "aa3f7bb71fb92f604b8d2192b7269a1f66074df0"
+                "reference": "0fb9f7017cc05dfefcdca8e4dbce9fef2c6a89a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xinix-technology/bono/zipball/aa3f7bb71fb92f604b8d2192b7269a1f66074df0",
-                "reference": "aa3f7bb71fb92f604b8d2192b7269a1f66074df0",
+                "url": "https://api.github.com/repos/xinix-technology/bono/zipball/0fb9f7017cc05dfefcdca8e4dbce9fef2c6a89a3",
+                "reference": "0fb9f7017cc05dfefcdca8e4dbce9fef2c6a89a3",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +432,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-06-03 08:51:34"
+            "time": "2014-06-12 06:56:25"
         },
         {
             "name": "xinix-technology/migrate",
@@ -511,12 +511,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xinix-technology/norm.git",
-                "reference": "fa6a1eb603a3a27e28efcdd42adefe9646bc9da6"
+                "reference": "97600cae61a610e4fbd0549f81905078d05786cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xinix-technology/norm/zipball/fa6a1eb603a3a27e28efcdd42adefe9646bc9da6",
-                "reference": "fa6a1eb603a3a27e28efcdd42adefe9646bc9da6",
+                "url": "https://api.github.com/repos/xinix-technology/norm/zipball/97600cae61a610e4fbd0549f81905078d05786cf",
+                "reference": "97600cae61a610e4fbd0549f81905078d05786cf",
                 "shasum": ""
             },
             "require": {
@@ -556,7 +556,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-06-03 10:02:10"
+            "time": "2014-06-12 04:44:17"
         }
     ],
     "packages-dev": [],

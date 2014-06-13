@@ -57,8 +57,8 @@ return array(
             'default' => '\\Norm\\Controller\\NormController',
             'mapping' => array(
                 '/user' => null,
-                // '/git'  => '\\App\\Controller\\GitController',
-                '/git'  => null,
+                '/git'  => '\\App\\Controller\\GitController',
+                // '/git'  => null,
                 '/menu' => '\\App\\Controller\\MenuController',
             ),
         ),

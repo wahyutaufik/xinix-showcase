@@ -13,7 +13,8 @@
         "xinix-technology/norm": "dev-master",
         "xinix-technology/migrate": "dev-master",
         "reekoheek/bono-auth": "dev-master",
-        "xinix-technology/naked-theme" : "dev-master"
+        "xinix-technology/naked-theme" : "dev-master",
+        "guzzle/guzzle": "~3.8.1"
     },
     "autoload": {
         "psr-0": {
