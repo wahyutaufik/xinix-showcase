@@ -7,8 +7,8 @@
                         <div class="span-12">
                         <div class="row">
                             <ul class="flat">
-                                <li><a href="http://localhost/xinix-showcase/www/index.php/git" class="button active">Search</a></li>
-                                <li><a href="<?php echo URL::site('git/null/create') ?>" class="button ">Create</a></li>
+                                <li><a href="<?php echo f('controller.url') ?>" class="button active">Search</a></li>
+                                <li><a href="<?php echo f('controller.url').'/null/create' ?>" class="button ">Create</a></li>
                             </ul>
                         </div>
                     </div>
@@ -20,11 +20,12 @@
                 <ul class="listview">
                     <li class="list-group-container">
                         <ul class="list-group">
-                            <?php 
-                                foreach ($entries as $entry): 
-                                $gits = explode("com/",$entry['git']);
-                                $git = explode("/",$gits['1']);    
-                            ?>
+                            <!-- <div id="prefetch">
+                                <form action="" method="POST">
+                                    <input class="typeahead" name="src" type="text" placeholder="Search">
+                                </form>
+                            </div> -->
+                            <?php foreach ($entries as $entry):?>
                             <li class="plain">
                                 <a href="<?php echo f('controller.url').'/'.$entry['$id'] ?>">
                                     <?php echo $entry['git']; ?> 
@@ -38,3 +39,10 @@
         </div>
     </div>
 </main>
+<script type="text/javascript">
+    var currentUrl = window.currentUrl = '<?php echo \URL::current(); ?>';
+</script>
+<script type="text/javascript" src="<?php echo \URL::base('vendor/jquery/jquery.js') ?>"></script>
+<script type="text/javascript" src="<?php echo \URL::base('vendor/js/bloodhound.js') ?>"></script>
+<script type="text/javascript" src="<?php echo \URL::base('vendor/js/typeahead.bundle.js') ?>"></script>
+<script type="text/javascript" src="<?php echo \URL::base('vendor/js/git.js') ?>"></script>

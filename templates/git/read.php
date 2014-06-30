@@ -35,36 +35,36 @@ $git 	= explode("/",$gits['1']);
 						</div>
 						<div class="span-12">
 							<label>Author</label>
-							<a href="https://github.com/<?php echo $owner['login']; ?>"><?php echo \Norm\Schema\String::create()->format('readOnly', $owner['login']) ?></a>
+							<a href="https://github.com/<?php echo $entry['author']; ?>"><?php echo \Norm\Schema\String::create()->format('readOnly', $entry['author']) ?></a>
 						</div>
 						<div class="span-12">
 							<label>Description</label>
 							<?php
-								if (empty($content['description'])) {
+								if (empty($entry['description'])) {
 									echo \Norm\Schema\String::create()->format('readOnly', 'null'); 
 								} else{ 
-									echo \Norm\Schema\String::create()->format('readOnly', $content['description']); 
+									echo \Norm\Schema\String::create()->format('readOnly', $entry['description']); 
 								}
 							?>
 						</div>
 						<div class="span-12">
 							<label>Stars</label>
 							<?php 
-							if (empty($content['stargazers_count'])) {
+							if (empty($entry['star'])) {
 								// echo "0";
 								echo \Norm\Schema\String::create()->format('readOnly', 'null'); 
 							} else{
-								echo \Norm\Schema\String::create()->format('readOnly', $content['stargazers_count']); 
+								echo \Norm\Schema\String::create()->format('readOnly', $entry['star']); 
 							}
 							?>
 						</div>
 						<div class="span-12">
 							<label>Forks</label>
 							<?php 
-								if (empty($content['forks'])) {
+								if (empty($entry['fork'])) {
 									echo \Norm\Schema\String::create()->format('readOnly', 'null'); 
 								} else{
-									echo \Norm\Schema\String::create()->format('readOnly', $content['forks']); 
+									echo \Norm\Schema\String::create()->format('readOnly', $entry['fork']); 
 								}
 							?>
 						</div>

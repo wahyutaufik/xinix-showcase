@@ -41,7 +41,12 @@ return array(
                     ),
                     'Git' => array(
                         'schema' => array(
-                            'git' => String::create('git'),
+                            'git' => String::create('git')->filter('trim|required'),
+                            'author' => String::create('author')->set('hidden',true),
+                            'repo' => String::create('repo')->set('hidden',true),
+                            'description' => String::create('description')->set('hidden',true),
+                            'fork' => String::create('fork')->set('hidden',true),
+                            'star' => String::create('star')->set('hidden',true),
                         ),
                     ),
                 ),
@@ -58,8 +63,7 @@ return array(
             'mapping' => array(
                 '/user' => null,
                 '/git'  => '\\App\\Controller\\GitController',
-                // '/git'  => null,
-                '/menu' => '\\App\\Controller\\MenuController',
+                '/menu' => null,
             ),
         ),
         '\\Bono\\Middleware\\ContentNegotiatorMiddleware' => array(

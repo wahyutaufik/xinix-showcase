@@ -18,14 +18,17 @@
 		    <div class="list-form">
 				<div class="form-input">
 	    			<form method="post">
-						<div class="row field field-git">
-							<div class="span-12">
-								<label>Git</label>
-								<?php echo \Norm\Schema\String::create('git')->format('input', null) ?>
-							</div>
-						</div>
-						<input type="submit" value="Submit">
-	    			</form>
+					    <?php foreach(f('app')->controller->schema() as $name => $field): ?>
+					    <?php if ($field['hidden']) continue ?>
+					    <div>
+					        <?php echo $field->label() ?>
+					        <?php echo $field->format('input', @$entry[$name]) ?>
+					    </div>
+					    <?php endforeach ?>
+					    <div class="command-bar">
+					        <input type="submit">
+					    </div>
+					</form>
 				</div>
 		    </div>
 		</div>
