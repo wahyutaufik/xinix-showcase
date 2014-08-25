@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title><?php echo f('page.title', 'Xinix Showcase') ?></title>
 
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo Theme::base('vendor/img/apple-touch-icon-114x114.png') ?>" />
+    <link type="image/x-icon" href="<?php echo URL::base('vendor/img/favicon.ico') ?>" rel="Shortcut icon" />
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/naked.min.css') ?>">
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/main.css') ?>">
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/style.css') ?>">
-
+    <script src="<?php echo Theme::base('vendor/jquery/jquery.js') ?>"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -46,7 +46,7 @@
         </div>
 
     </footer> -->
-    <script src="<?php echo Theme::base('vendor/jquery/jquery.js') ?>"></script>
+    
     <script src="<?php echo Theme::base('vendor/js/main.js') ?>"></script>
 </body>
 </html>
