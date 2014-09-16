@@ -28,7 +28,7 @@
                             <?php foreach ($entries as $entry):?>
                             <li class="plain">
                                 <a href="<?php echo f('controller.url').'/'.$entry['$id'] ?>">
-                                    <?php echo $entry['git']; ?> 
+                                    <?php echo $entry['git']; ?>
                                 </a>
                             </li>
                             <?php endforeach ?>

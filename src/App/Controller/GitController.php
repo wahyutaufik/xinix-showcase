@@ -1,38 +1,33 @@
-<?php 
-namespace App\Controller;
+<?php namespace App\Controller;
 
 use Norm\Controller\NormController as Controller;
 use Norm\Norm;
 use Guzzle\Http\Client;
+use Slim\Exception\Stop;
+use Exception;
 
-class GitController extends Controller{
-
+class GitController extends Controller
+{
     public function create()
     {
         $post = $this->request->post();
-        $this->createGit();        
+        $this->createGit();
     }
 
     public function update($id)
     {
-        $found = false;
-
         try {
             $entry = $this->collection->findOne($id);
-            if (isset($entry)) {
-                $found = true;
-            }
-        } catch (\Exception $e) {
-            // Silence is gold
-        }
 
-        if (!$found) {
-            return $this->app->notFound();
+            if (is_null($entry)) {
+                return $this->app->notFound();
+            }
+        } catch (Exception $e) {
+            // Silence is gold
         }
 
         if ($this->request->isPost() || $this->request->isPut()) {
             try {
-
                 $model = $entry;
 
                 $dataGit  = $this->getGitData($this->request->post('git'));
@@ -46,9 +41,9 @@ class GitController extends Controller{
                 h('controller.update.success', array(
                     'model' => $model,
                 ));
-            } catch (\Slim\Exception\Stop $e) {
+            } catch (Stop $e) {
                 throw $e;
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 h('notification.error', $e);
 
                 if (empty($model)) {
@@ -72,21 +67,23 @@ class GitController extends Controller{
         $request  = $client->get('/repos/'.$repo.'/readme');
         $response = $request->send();
         $contents = json_decode($response->getBody(), true);
-        
+
         return (isset($contents['content'])) ? $contents['content'] : null;
     }
 
     protected function getGitData($git)
     {
         $client   = new Client('https://api.github.com');
+
         $client->setSslVerification(false);
+
         $request  = $client->get('/repos/'.$git);
         $response = $request->send();
         $contents = $response->getBody();
-        
+
         $content  = json_decode($contents);
         $content  = get_object_vars($content);
-        
+
         $owner    = $content['owner'];
         $owner    = get_object_vars($owner);
         $dataGit  = array(
@@ -119,17 +116,14 @@ class GitController extends Controller{
                     'model' => $git
                 ));
 
-            } catch (\Slim\Exception\Stop $e) {
+            } catch (Stop $e) {
                 throw $e;
-            } catch (\Exception $e) {
-                throw $e;
-                
-                // h('notification.error', $e);
+            } catch (Exception $e) {
+                h('notification.error', $e);
 
-                // h('controller.create.error', array(
-                //     // 'model' => $git,
-                //     'error' => $e,
-                // ));
+                h('controller.create.error', array(
+                    'error' => $e,
+                ));
             }
         }
     }

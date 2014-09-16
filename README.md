@@ -1,4 +1,4 @@
-bono-arch
-=========
+Xinix Showcase
+--------------
 
-Bono PAX Archetype
+A place to put your cases and show them to the world.

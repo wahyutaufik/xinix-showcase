@@ -46,7 +46,7 @@
         </div>
 
     </footer> -->
-    
+
     <script src="<?php echo Theme::base('vendor/js/main.js') ?>"></script>
 </body>
 </html>
