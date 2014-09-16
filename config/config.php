@@ -63,7 +63,7 @@ return array(
             'mapping' => array(
                 '/user' => null,
                 '/git'  => '\\App\\Controller\\GitController',
-                '/menu' => null,
+                '/menu' => null,    
             ),
         ),
         '\\Bono\\Middleware\\ContentNegotiatorMiddleware' => array(
