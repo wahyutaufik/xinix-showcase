@@ -6,7 +6,7 @@ use Norm\Schema\Password;
 return array(
     'application' => array(
         'title'    => 'Xinix Showcase',
-        'subtitle' => 'A Comfy Place to Show Your Case',
+        'subtitle' => 'A Comfy Place to Show Your Cases',
     ),
     'bono.salt'      => 'e4d692e3ffe441649afa4c89c907a4f95653f89f',
     'bono.providers' => array(
@@ -29,6 +29,9 @@ return array(
                         ),
                     ),
                     'Git' => array(
+                        'observers' => array(
+                            'App\\Observer\\ShowcaseObserver' => array()
+                        ),
                         'schema' => array(
                             'git'         => String::create('git')->filter('trim|required'),
                             'author'      => String::create('author')->set('hidden', true),
@@ -38,6 +41,7 @@ return array(
                             'star'        => String::create('star')->set('hidden', true),
                             'version'     => String::create('version')->set('hidden', true),
                             'readme'      => String::create('readme')->set('hidden', true),
+                            'slug'        => String::create('readme')->set('hidden', true),
                         ),
                     ),
                 ),
@@ -52,9 +56,10 @@ return array(
         '\\Bono\\Middleware\\ControllerMiddleware' => array(
             'default' => '\\Norm\\Controller\\NormController',
             'mapping' => array(
-                '/user' => null,
-                '/git'  => '\\App\\Controller\\GitController',
-                '/menu' => null,    
+                '/user'     => null,
+                '/git'      => null,
+                '/menu'     => null,
+                '/packages' => 'App\\Controller\\PackageController',
             ),
         ),
         '\\Bono\\Middleware\\ContentNegotiatorMiddleware' => array(

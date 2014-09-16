@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href="<?php echo URL::base('/vendor/css/prettify.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo URL::base('/vendor/css/prettify.clean.css') ?>">
-
 <main>
     <div class="container">
         <div class="listing">
@@ -24,15 +23,13 @@
             <div class="list-form">
                 <div class="">
                     <div class="row field field-git">
-                        <h3>
-                            <a href="<?php echo $entry['git']; ?>"><?php echo \Norm\Schema\String::create()->format('readOnly', $entry->get('repo')) ?></a>
-                        </h3>
+                        <h3><?php echo \Norm\Schema\String::create()->format('readOnly', $entry->get('repo')) ?></h3>
 
                         <p>
                             <?php
                                 if (empty($entry['description'])) {
                                     echo \Norm\Schema\String::create()->format('readOnly', 'No description available');
-                                } else{
+                                } else {
                                     echo \Norm\Schema\String::create()->format('readOnly', $entry['description']);
                                 }
                             ?>
@@ -54,7 +51,7 @@
                             <?php
                             if (empty($entry['star'])) {
                                 echo \Norm\Schema\String::create()->format('readOnly', 'Never starred');
-                            } else{
+                            } else {
                                 echo \Norm\Schema\String::create()->format('readOnly', $entry['star']);
                             }
                             ?>
@@ -64,7 +61,7 @@
                             <?php
                                 if (empty($entry['fork'])) {
                                     echo \Norm\Schema\String::create()->format('readOnly', 'Never forked');
-                                } else{
+                                } else {
                                     echo \Norm\Schema\String::create()->format('readOnly', $entry['fork']);
                                 }
                             ?>
@@ -89,8 +86,9 @@
 <script type="text/javascript" src="<?php echo URL::base('/vendor/js/marked.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo URL::base('/vendor/prettify/prettify.js') ?>"></script>
 <script type="text/javascript">
-    $('a[rel="external"]').click(function() {
+    $('a[rel="external"]').click(function () {
         window.open($(this).attr('href'));
+
         return false;
     });
 

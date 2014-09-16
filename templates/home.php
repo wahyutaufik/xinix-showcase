@@ -26,7 +26,14 @@
                                 <tbody id="tableGit">
                                     <?php foreach($gits as $git): ?>
                                         <tr>
-                                            <td><a href="<?php echo URL::site('/git/'.$git->getId()) ?>"><?php echo $git->get('repo') ?></a></td>
+                                            <?php
+                                                if (!$git->get('slug')) {
+                                                    $url = '/git/'.$git->getId();
+                                                } else {
+                                                    $url = '/packages/'.$git->get('slug');
+                                                }
+                                            ?>
+                                            <td><a href="<?php echo URL::site($url) ?>"><?php echo $git->get('git') ?></a></td>
                                             <td><?php echo $git->get('description') ?></td>
                                             <td><?php echo $git->get('star') ?></td>
                                             <td><?php echo $git->get('fork') ?></td>
@@ -54,13 +61,13 @@
     //  $.ajax({
     //      method: "GET",
     //      url: urlAjax,
-    //      beforeSend : function(xhr) {
+    //      beforeSend : function (xhr) {
     //          $("#loader").show();
     //      }
-    //  }).done(function(data) {
-    //      if(data['entries'].length) {
+    //  }).done(function (data) {
+    //      if (data['entries'].length) {
     //          $("#tableGit").html('');
-    //          $.each(data['entries'], function(k, v) {
+    //          $.each(data['entries'], function (k, v) {
     //              $("#tableGit").append("<tr>"+
     //                  "<td><a href='<?php echo URL::site('/git').'/'?>"+v.$id+"'>"+v.repo+"</a></td>"+
     //                  "<td>"+v.description+"</td>"+
@@ -73,8 +80,8 @@
     //  });
     // }
 
-    // $("#searching").on('keypress', function(e) {
-    //  if(e.which == 13) {
+    // $("#searching").on('keypress', function (e) {
+    //  if (e.which == 13) {
     //      e.preventDefault();
     //      e.stopPropagation();
     //      git($(this).val());
