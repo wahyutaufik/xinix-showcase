@@ -13,41 +13,105 @@ class GitController extends Controller{
         $this->createGit();        
     }
 
+    public function update($id)
+    {
+        $found = false;
+
+        try {
+            $entry = $this->collection->findOne($id);
+            if (isset($entry)) {
+                $found = true;
+            }
+        } catch (\Exception $e) {
+            // Silence is gold
+        }
+
+        if (!$found) {
+            return $this->app->notFound();
+        }
+
+        if ($this->request->isPost() || $this->request->isPut()) {
+            try {
+
+                $model = $entry;
+
+                $dataGit  = $this->getGitData($this->request->post('git'));
+
+                $model->set($dataGit)->save();
+
+                $entry = $model;
+
+                h('notification.info', $this->clazz.' updated');
+
+                h('controller.update.success', array(
+                    'model' => $model,
+                ));
+            } catch (\Slim\Exception\Stop $e) {
+                throw $e;
+            } catch (\Exception $e) {
+                h('notification.error', $e);
+
+                if (empty($model)) {
+                    $model = null;
+                }
+
+                h('controller.update.error', array(
+                    'error' => $e,
+                    'model' => $model,
+                ));
+            }
+        }
+
+        $this->data['entry'] = $entry;
+    }
+
+    protected function getReadme($repo)
+    {
+        $client   = new Client('https://api.github.com');
+        $client->setSslVerification(false);
+        $request  = $client->get('/repos/'.$repo.'/readme');
+        $response = $request->send();
+        $contents = json_decode($response->getBody(), true);
+        
+        return (isset($contents['content'])) ? $contents['content'] : null;
+    }
+
+    protected function getGitData($git)
+    {
+        $client   = new Client('https://api.github.com');
+        $client->setSslVerification(false);
+        $request  = $client->get('/repos/'.$git);
+        $response = $request->send();
+        $contents = $response->getBody();
+        
+        $content  = json_decode($contents);
+        $content  = get_object_vars($content);
+        
+        $owner    = $content['owner'];
+        $owner    = get_object_vars($owner);
+        $dataGit  = array(
+            'git'         => $git,
+            'author'      => $owner['login'],
+            'repo'        => $content['name'],
+            'description' => $content['description'],
+            'star'        => $content['stargazers_count'],
+            'fork'        => $content['forks_count'],
+            'readme'      => $this->getReadme($git),
+        );
+
+        return $dataGit;
+    }
+
     public function createGit()
     {
         if ($this->request->isPost()) {
             try {
-                if ($_POST) {
-                    $post     = $this->request->post();
-                    foreach ($post as $key => $value) {
-                        
-                    }
-                    $gits     = explode("com/",$value);
-                    $git      = explode("/",$gits['1']);
-                    
-                    $client   = new Client('https://api.github.com');
-                    $request  = $client->get('/repos/'.$gits['1']);
-                    $response = $request->send();
-                    $contents = $response->getBody();
-                    
-                    $content  = json_decode($contents);
-                    $content  = get_object_vars($content);
-                    
-                    $owner    = $content['owner'];
-                    $owner    = get_object_vars($owner);
-                    $dataGit  = array(
-                        'git'         => $post['git'],
-                        'author'      => $owner['login'],
-                        'repo'        => $content['name'],
-                        'description' => $content['description'],
-                        'star'        => $content['stargazers_count'],
-                        'fork'        => $content['forks_count'],
-                    );
+                $git      = $this->data['git'] = $this->request->post('git');
+                $dataGit  = $this->getGitData($git);
 
-                    $git = Norm::factory('Git')->newInstance();
-                    $git->set($dataGit);
-                    $git->save(array());
-                }
+                $git = Norm::factory('Git')->newInstance();
+                $git->set($dataGit);
+                $git->save(array());
 
                 h('notification.info', $this->clazz.' created.');
 
@@ -58,14 +122,14 @@ class GitController extends Controller{
             } catch (\Slim\Exception\Stop $e) {
                 throw $e;
             } catch (\Exception $e) {
+                throw $e;
+                
+                // h('notification.error', $e);
 
-                h('notification.error', $e);
-
-                h('controller.create.error', array(
-                    // 'model' => $git,
-                    'error' => $e,
-                ));
-
+                // h('controller.create.error', array(
+                //     // 'model' => $git,
+                //     'error' => $e,
+                // ));
             }
         }
     }

@@ -61,6 +61,10 @@ input[type="submit"] {
     -o-border-radius: 5px;
     border-radius: 5px;
 }
+
+input.postfix-input { border: 1px solid #ccc; }
+span.postfix, span.prefix { height: 31px; line-height: 30px; }
+
 .alert { padding: 0; background: transparent; }
 .alert p { padding: 5px; cursor: pointer; text-align: center; font-size: 1.1em; }
 .alert.error p { background: #ff3b30; }
@@ -94,7 +98,6 @@ select.role-select { border: 0; border-bottom: 1px solid #ddd; }
     -ms-box-shadow: 0 20px 100px rgba(0, 0, 0, 0.10);
     -o-box-shadow: 0 20px 100px rgba(0, 0, 0, 0.10);
     box-shadow: 0 20px 100px rgba(0, 0, 0, 0.10);
-    filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=180, Strength=5);
 }
 #login a.button,
 #login input[type="submit"] { margin: 0 auto; }

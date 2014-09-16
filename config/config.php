@@ -16,8 +16,9 @@ use Norm\Schema\String;
 use Norm\Schema\Password;
 
 return array(
-    'app.about' => array(
-        'title' => 'Xinix-Showcase',
+    'application' => array(
+        'title' => 'Xinix Showcase',
+        'subtitle' => 'A Comfy Place to Show Your Case',
     ),
     'bono.salt' => 'please change this',
     'bono.providers' => array(
@@ -42,11 +43,13 @@ return array(
                     'Git' => array(
                         'schema' => array(
                             'git' => String::create('git')->filter('trim|required'),
-                            'author' => String::create('author')->set('hidden',true),
-                            'repo' => String::create('repo')->set('hidden',true),
-                            'description' => String::create('description')->set('hidden',true),
-                            'fork' => String::create('fork')->set('hidden',true),
-                            'star' => String::create('star')->set('hidden',true),
+                            'author' => String::create('author')->set('hidden', true),
+                            'repo' => String::create('repo')->set('hidden', true),
+                            'description' => String::create('description')->set('hidden', true),
+                            'fork' => String::create('fork')->set('hidden', true),
+                            'star' => String::create('star')->set('hidden', true),
+                            'version' => String::create('version')->set('hidden', true),
+                            'readme' => String::create('readme')->set('hidden', true),
                         ),
                     ),
                 ),

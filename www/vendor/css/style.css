@@ -7,6 +7,7 @@ h2.title { margin: 0; margin-bottom: 20px; text-align: center; color: #39a3d0; }
 #footer p a { color: #fff; }
 #footer p a:hover { color: #000; }
 
-
 .tt-dropdown-menu { background: #FFF; cursor: pointer; }
 .tt-dataset-git { padding: 8px 30px 8px 8px; font-size: 1.2em; width: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; float: left; line-height: inherit; }
+
+.info-packages { margin-top: 10px; }

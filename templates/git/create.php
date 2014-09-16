@@ -20,9 +20,15 @@
 	    			<form method="post">
 					    <?php foreach(f('app')->controller->schema() as $name => $field): ?>
 					    <?php if ($field['hidden']) continue ?>
-					    <div>
+					    <div class="row">
 					        <?php echo $field->label() ?>
-					        <?php echo $field->format('input', @$entry[$name]) ?>
+					        <?php //echo $field->format('input', @$entry[$name]) ?>
+					        <div class="span-3">
+					            <span class="prefix">https://github.com/</span>
+					        </div>
+					        <div class="span-9">
+					            <input class="postfix-input" type="text" name="git" placeholder="username/repo">
+					        </div>
 					    </div>
 					    <?php endforeach ?>
 					    <div class="command-bar">

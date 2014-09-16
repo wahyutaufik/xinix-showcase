@@ -21,11 +21,14 @@
 		    <div class="list-form">
 				<div class="form-input">
 					<form method="post">
-						<div class="row field field-git">
-							<div class="span-12">
-								<label>Git</label>
-								<?php echo \Norm\Schema\String::create('git')->format('input', $entry['git']) ?>
-							</div>
+						<div class="row">
+							<label>GIT</label>
+						    <div class="span-3">
+						        <span class="prefix">https://github.com/</span>
+						    </div>
+						    <div class="span-9">
+						        <input class="postfix-input" type="text" name="git" placeholder="username/repo" value="<?php echo $entry->get('git') ?>">
+						    </div>
 						</div>
 						<input type="submit" value="Submit">	
 					</form>

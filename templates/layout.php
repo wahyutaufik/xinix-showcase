@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/main.css') ?>">
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/style.css') ?>">
     <script src="<?php echo Theme::base('vendor/jquery/jquery.js') ?>"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
@@ -33,7 +33,7 @@
     <main>
         <?php echo f('notification.show') ?>
         <div class="container">
-            <?php echo $body ?>
+<?php echo $body ?>
         </div>
     </main>
     <!-- <footer>
