@@ -11,7 +11,7 @@ var git = new Bloodhound({
 });
 
 git.initialize();
- 
+
 $('#prefetch .typeahead').typeahead(null, {
     name      : 'git',
     displayKey: 'name',
