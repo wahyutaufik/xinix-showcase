@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "bd481868dbfb0873f19e5d9ea315cb98",
+    "hash": "9628b6208869da46629b81257e769534",
     "packages": [
         {
             "name": "filp/whoops",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "ae05259236204ccf904a94e5b0d96df8d4351da5"
+                "reference": "9f451fbc7b8cad5e71300672c340c28c6bec09ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/ae05259236204ccf904a94e5b0d96df8d4351da5",
-                "reference": "ae05259236204ccf904a94e5b0d96df8d4351da5",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/9f451fbc7b8cad5e71300672c340c28c6bec09ff",
+                "reference": "9f451fbc7b8cad5e71300672c340c28c6bec09ff",
                 "shasum": ""
             },
             "require": {
@@ -61,7 +62,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2014-05-13 05:05:11"
+            "time": "2014-07-11 05:56:54"
         },
         {
             "name": "guzzle/guzzle",
@@ -161,12 +162,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reekoheek/bono-auth.git",
-                "reference": "4f93df03905892378a881572fe79affab4b03faf"
+                "reference": "0c71907291574c4830a8d2271df731935f033fb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reekoheek/bono-auth/zipball/4f93df03905892378a881572fe79affab4b03faf",
-                "reference": "4f93df03905892378a881572fe79affab4b03faf",
+                "url": "https://api.github.com/repos/reekoheek/bono-auth/zipball/0c71907291574c4830a8d2271df731935f033fb6",
+                "reference": "0c71907291574c4830a8d2271df731935f033fb6",
                 "shasum": ""
             },
             "require": {
@@ -186,13 +187,11 @@
             "authors": [
                 {
                     "name": "Ganesha",
-                    "email": "reekoheek@gmail.com",
-                    "homepage": "http://xinix.co.id",
-                    "role": "Developer"
+                    "email": "reekoheek@gmail.com"
                 }
             ],
             "description": "Bono Auth",
-            "time": "2014-06-09 07:07:38"
+            "time": "2014-09-13 09:34:28"
         },
         {
             "name": "reekoheek/jsonkit",
@@ -229,7 +228,7 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "Aprianto Pramana Putra",
+                    "name": "Apriyanto Pramana Putra",
                     "email": "apriantopramanaputra@gmail.com",
                     "role": "Developer"
                 }
@@ -317,17 +316,17 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.5.0",
+            "version": "v2.5.4",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8"
+                "reference": "8faf5cc7e80fde74a650a36e60d32ce3c3e0457b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8",
-                "reference": "cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/8faf5cc7e80fde74a650a36e60d32ce3c3e0457b",
+                "reference": "8faf5cc7e80fde74a650a36e60d32ce3c3e0457b",
                 "shasum": ""
             },
             "require": {
@@ -360,19 +359,17 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-04-29 10:13:57"
+            "time": "2014-07-28 13:20:46"
         },
         {
             "name": "xinix-technology/bono",
@@ -380,12 +377,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xinix-technology/bono.git",
-                "reference": "0fb9f7017cc05dfefcdca8e4dbce9fef2c6a89a3"
+                "reference": "c0049ac11099416ed2b1eb986a061240b16d28e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xinix-technology/bono/zipball/0fb9f7017cc05dfefcdca8e4dbce9fef2c6a89a3",
-                "reference": "0fb9f7017cc05dfefcdca8e4dbce9fef2c6a89a3",
+                "url": "https://api.github.com/repos/xinix-technology/bono/zipball/c0049ac11099416ed2b1eb986a061240b16d28e1",
+                "reference": "c0049ac11099416ed2b1eb986a061240b16d28e1",
                 "shasum": ""
             },
             "require": {
@@ -416,8 +413,8 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "Aprianto Pramana Putra",
-                    "email": "apriantopramanaputra@gmail.com",
+                    "name": "Nur Alam",
+                    "email": "rhoe.coder@gmail.com",
                     "role": "Developer"
                 },
                 {
@@ -427,12 +424,12 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "Nur Alam",
-                    "email": "rhoe.coder@gmail.com",
+                    "name": "Aprianto Pramana Putra",
+                    "email": "apriantopramanaputra@gmail.com",
                     "role": "Developer"
                 }
             ],
-            "time": "2014-06-12 06:56:25"
+            "time": "2014-09-13 09:33:08"
         },
         {
             "name": "xinix-technology/migrate",
@@ -440,12 +437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xinix-technology/migrate.git",
-                "reference": "91c8a443eeec1107b359af916d5c9b324688c3d7"
+                "reference": "464c87ebee8c86fc8e949d157b45c4ee60071257"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xinix-technology/migrate/zipball/91c8a443eeec1107b359af916d5c9b324688c3d7",
-                "reference": "91c8a443eeec1107b359af916d5c9b324688c3d7",
+                "url": "https://api.github.com/repos/xinix-technology/migrate/zipball/464c87ebee8c86fc8e949d157b45c4ee60071257",
+                "reference": "464c87ebee8c86fc8e949d157b45c4ee60071257",
                 "shasum": ""
             },
             "require": {
@@ -470,7 +467,7 @@
                 }
             ],
             "description": "Migration tool for bono",
-            "time": "2014-05-20 20:12:45"
+            "time": "2014-06-20 12:12:49"
         },
         {
             "name": "xinix-technology/naked-theme",
@@ -478,12 +475,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xinix-technology/naked-theme.git",
-                "reference": "0ae7dac78472096b9b6df9eb2aa8a5f6c25e0194"
+                "reference": "715733f3dd53c77a922c10f0a01eaad04604dc7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xinix-technology/naked-theme/zipball/0ae7dac78472096b9b6df9eb2aa8a5f6c25e0194",
-                "reference": "0ae7dac78472096b9b6df9eb2aa8a5f6c25e0194",
+                "url": "https://api.github.com/repos/xinix-technology/naked-theme/zipball/715733f3dd53c77a922c10f0a01eaad04604dc7c",
+                "reference": "715733f3dd53c77a922c10f0a01eaad04604dc7c",
                 "shasum": ""
             },
             "type": "library",
@@ -503,7 +500,7 @@
                 }
             ],
             "description": "Naked theme",
-            "time": "2014-05-31 09:18:44"
+            "time": "2014-09-09 02:03:23"
         },
         {
             "name": "xinix-technology/norm",
@@ -511,12 +508,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xinix-technology/norm.git",
-                "reference": "97600cae61a610e4fbd0549f81905078d05786cf"
+                "reference": "aa944c1d4b8c21186a0edfab2ea0e52656896537"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xinix-technology/norm/zipball/97600cae61a610e4fbd0549f81905078d05786cf",
-                "reference": "97600cae61a610e4fbd0549f81905078d05786cf",
+                "url": "https://api.github.com/repos/xinix-technology/norm/zipball/aa944c1d4b8c21186a0edfab2ea0e52656896537",
+                "reference": "aa944c1d4b8c21186a0edfab2ea0e52656896537",
                 "shasum": ""
             },
             "require": {
@@ -545,18 +542,18 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "Aprianto Pramana Putra",
-                    "email": "apriantopramanaputra@gmail.com",
-                    "role": "Developer"
-                },
-                {
                     "name": "Krisan Alfa",
                     "email": "krisan47@gmail.com",
                     "homepage": "https://twitter.com/krisanalfa",
                     "role": "Developer"
+                },
+                {
+                    "name": "Aprianto Pramana Putra",
+                    "email": "apriantopramanaputra@gmail.com",
+                    "role": "Developer"
                 }
             ],
-            "time": "2014-06-12 04:44:17"
+            "time": "2014-09-13 12:28:41"
         }
     ],
     "packages-dev": [],
@@ -569,6 +566,7 @@
         "reekoheek/bono-auth": 20,
         "xinix-technology/naked-theme": 20
     },
+    "prefer-stable": false,
     "platform": [],
     "platform-dev": []
 }

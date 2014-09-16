@@ -6,8 +6,8 @@
 					<h2 class="title"><a href="<?php echo URL::site('git/null/create') ?>">Submit Your Own Here</a></h2>
 				</div>
 				<div class="span-12">
-					<form action="" class="form-input">
-						<input type="text" name="" id="searching"  placeholder="Search">
+					<form action="" class="form-input" method="GET">
+						<input type="text" name="q" id="searching"  placeholder="Search" value="<?php echo $query ?>" >
 					</form>
 				</div>
 				<div class="span-12">
@@ -24,9 +24,20 @@
 									</tr>
 								</thead>
 								<tbody id="tableGit">
-									<!-- here is content ajax -->
+									<?php foreach($gits as $git): ?>
+										<tr>
+											<td><a href="<?php echo URL::site('/git/'.$git->getId()) ?>"><?php echo $git->get('repo') ?></a></td>
+											<td><?php echo $git->get('description') ?></td>
+											<td><?php echo $git->get('star') ?></td>
+											<td><?php echo $git->get('fork') ?></td>
+											<td><?php echo $git->get('author') ?></td>
+										</tr>
+									<?php endforeach; ?>
 								</tbody>
 							</table>
+						</div>
+						<div class="pull-right info-packages">
+							<i>Currently there are <?php echo $count; ?> packages registered on ShowCase</i>
 						</div>
 					</div>
 				</div>
@@ -36,31 +47,41 @@
 </div>
 
 <script type="text/javascript">
-	function git(searching){
-	var obj=document.getElementById("search");
-	var urlAjax='<?php echo URL::site("/git.json") ?>?!match='+searching;
-		$.ajax({
-			method: "GET",
-			url: urlAjax,
-			beforeSend : function(xhr){
-				$("#loader").show();
-			}
-		}).done(function(data){
-			if(data['entries'].length){
-				$("#tableGit").html('');
-				$.each(data['entries'], function(k, v){
-					console.log(v);
-					$("#tableGit").append("<tr><td><a href='<?php echo URL::site('/git').'/'?>"+v.$id+"'>"+v.repo+"</a></td><td>"+v.description+"</td><td>"+v.star+"</td><td>"+v.fork+"</td><td><a href='https:github.com/"+v.author+"'>"+v.author+"</a></td></tr>");
-				});
-			}
-		});
-	}
+	// function git(searching) {
+	// 	var obj = document.getElementById("search"),
+	// 		urlAjax = '<?php echo URL::site("/git.json") ?>?!match='+searching;
 
-	$("#searching").on('keypress', function(e){
-		if(e.which == 13){
-			e.preventDefault();
-			e.stopPropagation();
-			git($(this).val());
-		}
-	});
+	// 	$.ajax({
+	// 		method: "GET",
+	// 		url: urlAjax,
+	// 		beforeSend : function(xhr) {
+	// 			$("#loader").show();
+	// 		}
+	// 	}).done(function(data) {
+	// 		if(data['entries'].length) {
+	// 			$("#tableGit").html('');
+	// 			$.each(data['entries'], function(k, v) {
+	// 				$("#tableGit").append("<tr>"+
+	// 					"<td><a href='<?php echo URL::site('/git').'/'?>"+v.$id+"'>"+v.repo+"</a></td>"+
+	// 					"<td>"+v.description+"</td>"+
+	// 					"<td>"+v.star+"</td>"+
+	// 					"<td>"+v.fork+"</td>"+
+	// 					"<td><a href='https:github.com/"+v.author+"'>"+v.author+"</a></td>"+
+	// 				"</tr>");
+	// 			});
+	// 		}
+	// 	});
+	// }
+
+	// $("#searching").on('keypress', function(e) {
+	// 	if(e.which == 13) {
+	// 		e.preventDefault();
+	// 		e.stopPropagation();
+	// 		git($(this).val());
+	// 	}
+	// });
+	
+	if ($('#searching').val()) {
+		$('#searching').focus();
+	}
 </script>

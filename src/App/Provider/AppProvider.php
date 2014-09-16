@@ -12,14 +12,26 @@ class AppProvider extends \Bono\Provider\Provider
         $app = $this->app;
 
         $app->get('/', function () use ($app) {
-            $gits = \Norm::factory('Git')->find()->sort(array('$updated_time'=>-1))->limit(10);
+            $query = $app->request->get('q') ?: null;
+            $gits = Norm::factory('Git')
+                ->find()
+                ->sort(array('$updated_time' => -1))
+                ->match($query)
+                ->limit(10);
+
+            $count = Norm::factory('Git')->find()->count();
+            
             $entry['gits'] = $gits;
 
+            if (is_null($query)) {
+                $query = '';
+            }
+
             $app->response->set('gits', $gits);
+            $app->response->set('query', $query);
+            $app->response->set('count', $count);
             $app->response->template('home');
             $app->view->setLayout('layout');
-            // var_dump($gits->toArray());
-            // exit;
         });
     }
 }

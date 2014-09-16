@@ -2,4 +2,8 @@
 /composer.phar
 /project.sublime-*
 /node_modules
+/.idea
+/*.sublime-project
+/*.sublime-workspace
+.DS_Store
 
